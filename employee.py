@@ -1,9 +1,12 @@
-# api
-# attendance.py
+from flask import Flask, render_template, redirect, request, jsonify
 
-# common
-# attendance.py
+from sqlalchemy import create_engine, text
+from config import DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_HOSTNAME, DATABASE_NAME
 
-# web
-# attendance.py
-# web_attendance_clock_in()
+def init_engine(app):
+    app._engine = create_engine('mysql://' + DATABASE_USERNAME + ':' + DATABASE_PASSWORD + '@' + DATABASE_HOSTNAME + '/' + DATABASE_NAME + '?charset=utf8')
+
+app = Flask(__name__)
+app.debug = True
+init_engine(app)
+app.run(port = 5000)
