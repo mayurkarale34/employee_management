@@ -17,7 +17,8 @@ def integrate():
         fin.close()
 
 
-        combine_file_content = app_index + app_init + app_run 
+        combine_file_content = app_init + app_index + app_run 
+        
         fout = open("employee.py", "w")
         fout.write(combine_file_content)
         fout.close()
