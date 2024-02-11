@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
     <title>Employee_Attendance</title>
+
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-2.1.3.min.js"></script>
 </head>
 <body>
-    <h1>Hello!</h1>
+    <br>
+    <button type="button" class="btn btn-primary pull-right" id="login">Login</button>
+    <h1>Home Page</h1>
 </body>
+
+<script>
+    $('#login').click(function(){
+        window.location.href = '/login';
+    });
+</script>
 </html>
