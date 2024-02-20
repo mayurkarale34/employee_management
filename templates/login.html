@@ -30,7 +30,7 @@
                     </div>
                     <div style="text-align: center;">
                         <button type='submit' class="btn btn-warning" id="cancel">Cancel</button>
-                        <button class="btn btn-success" id="login">Login</button>
+                        <button type="button" class="btn btn-success" id="login">Login</button>
                     </div>
                 </form>  
             </div>
@@ -39,6 +39,8 @@
 
 </body>
 <script>
-    
+    $('#login').click(function(){
+        window.location.href = '/home';
+    });
 </script>
 </html>
