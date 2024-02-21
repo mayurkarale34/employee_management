@@ -19,17 +19,17 @@
         <img src="/static/images/logo.png" alt="" height="5%" width="20%">
         <div class="row justify-content-center" style="margin-top: 5%;">
             <div class="col-md-4 col-md-offset-4">
-                <form>
+                <form id="login_form">
                     <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter username">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
                     </div>
                     <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     </div>
                     <div style="text-align: center;">
-                        <button type='submit' class="btn btn-warning" id="cancel">Cancel</button>
+                        <button type='button' class="btn btn-warning" id="cancel">Cancel</button>
                         <button type="button" class="btn btn-success" id="login">Login</button>
                     </div>
                 </form>  
@@ -40,7 +40,38 @@
 </body>
 <script>
     $('#login').click(function(){
-        window.location.href = '/home';
+        let username = $('#username').val();
+        let password = $('#password').val();
+        
+        if(username==''){
+            alert("Please provide username");
+            return false;
+        }
+
+        if(password==''){
+            alert("Please provide password");
+            return false;
+        }
+        data = {
+            "user_name" : username,
+            "password" : password
+        }
+
+        $.ajax({
+            url: '/validate_login',
+            type: 'POST',
+            data: $('#login_form').serialize(),
+            success: function (response) {
+                if(response.status){
+                    window.location.href = '/home';
+                }
+                else{
+                    alert("Please check username or password")
+                }
+                
+            }
+        });
+        
     });
 </script>
 </html>
