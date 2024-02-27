@@ -9,7 +9,8 @@ def login():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    user_name = "Admin"
+    return render_template('home.html', username = user_name)
 
 
 @app.route('/validate_login', methods = ['POST'])

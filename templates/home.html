@@ -13,17 +13,24 @@
 </head>
 <body>
 
-  <div class="container" style="margin-top: 5%;">
     <img src="static/images/logo.png" alt="Logo" height="5%" width="20%">
     
     
-
-    <button style="float: right;" type="button">
+    <div style="float: right; margin-top: 10px">
+        <label for=""><span style="color: #50afdc;">Welcome, </span><span style="color: #50afdc; font-weight: bold; font-style: italic;"> {{ username }}</span></label>
+         &nbsp;&nbsp;
+        <a href="/login">
+            <img src="static/images/logout.png" alt="Logout" height="15px" width="20px">
+        </a>&nbsp;&nbsp;
+        
+    </div>
+    <!-- <button style="float: right;" type="button">
       <img src="static/images/logout.png" alt="Logout" height="10px" width="20px">
-    </button>
-    <span style="float: right;">Welcome, {{ username }}</span>
+    </button> -->
+
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(121, 119, 117);">
     
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -71,6 +78,5 @@
   
     </nav>
 
-  </div>
 </body>
 </html>
