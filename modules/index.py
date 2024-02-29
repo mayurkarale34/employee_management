@@ -22,3 +22,7 @@ def validate_login():
         return jsonify({"status" : True})
     else:
         return jsonify({"status" : False})
+    
+@app.route('/empmanagement')
+def empmanagement():
+    return render_template('empmanagement.html')
