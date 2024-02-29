@@ -19,18 +19,25 @@
       color: white;
       margin-right: 20px;
     }
+
+    .theme{
+      background-color: rgb(131, 170, 192);
+      font-family: 'Times New Roman', Times, serif;
+      
+    }
   </style>
 </head>
 <body>
+  <div class="col-md-12 theme" style="position: fixed; top: 0; height: 5px; color: white;"></div>
 
     <img src="static/images/logo.png" alt="Logo" height="5%" width="20%">
     
     
-    <div style="float: right; margin-top: 10px">
+    <div style="float: right; margin-top: 15px">
         <label for=""><span style="color: #50afdc;">Welcome, </span><span style="color: #50afdc; font-weight: bold; font-style: italic;"> {{ username }}</span></label>
          &nbsp;&nbsp;
         <a href="/login">
-            <img src="static/images/logout.png" alt="Logout" height="15px" width="20px">
+            <img src="static/images/logout.png" alt="Logout" height="20px" width="20px">
         </a>&nbsp;&nbsp;
         
     </div>
@@ -40,7 +47,7 @@
 
     
     
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(121, 119, 117); height: 25px;">
+    <nav class="navbar navbar-expand-lg theme" style="height: 25px;">
     
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -88,7 +95,7 @@
   
     </nav>
 
-    <div class="col-md-12" style="background-color: rgb(121, 119, 117);position: fixed; bottom: 0; height: 25px; color: white;">
+    <div class="col-md-12 theme" style="position: fixed; bottom: 0; height: 25px; color: white;">
       <span class="col-md-2">Powered By --------</span>
       <span class="col-md-3"></span>
       <span class="col-md-2">Employee Management System</span>
