@@ -25,4 +25,5 @@ def validate_login():
     
 @app.route('/empmanagement')
 def empmanagement():
-    return render_template('empmanagement.html')
+    user_name = "Admin"
+    return render_template('empmanagement.html', username = user_name)
