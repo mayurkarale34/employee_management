@@ -16,8 +16,16 @@ def integrate():
         app_index = fin.read()
         fin.close()
 
+        fin = open("modules/employee_management/common/employee_management.py", "r")
+        common_employee_management = fin.read()
+        fin.close()
 
-        combine_file_content = app_init + app_index + app_run 
+        fin = open("modules/employee_management/web/employee_management.py", "r")
+        web_employee_management = fin.read()
+        fin.close()
+
+
+        combine_file_content = app_init + app_index + web_employee_management + common_employee_management + app_run 
         
         fout = open("employee.py", "w")
         fout.write(combine_file_content)

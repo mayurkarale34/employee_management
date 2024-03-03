@@ -22,13 +22,7 @@ def validate_login():
         return jsonify({"status" : True})
     else:
         return jsonify({"status" : False})
-    
-@app.route('/empmanagement')
-def empmanagement():
-    user_name = "Admin"
-    return render_template('empmanagement.html', username = user_name)
 
-  
 @app.route('/reports')
 def reports():
     user_name = "Admin"
