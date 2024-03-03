@@ -27,3 +27,10 @@ def validate_login():
 def empmanagement():
     user_name = "Admin"
     return render_template('empmanagement.html', username = user_name)
+
+  
+@app.route('/reports')
+def reports():
+    user_name = "Admin"
+    return render_template('reports', username = user_name)
+
