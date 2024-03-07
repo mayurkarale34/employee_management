@@ -35,7 +35,7 @@
             Master
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <a class="dropdown-item" href="#">Metadata</a>
+            <a class="dropdown-item" href="#" id="manage_metadata">Metadata</a>
             <a class="dropdown-item" href="#">M2</a>
             <a class="dropdown-item" href="#">M3</a>
         </div>
@@ -46,8 +46,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
             <a class="dropdown-item" href="#" id="manage_employee">Employee Management</a>
-            <a class="dropdown-item" href="#">H2</a>
-            <a class="dropdown-item" href="#">H3</a>
+            <a class="dropdown-item" href="#">Overall Leave Master</a>
+            <a class="dropdown-item" href="#">Leave Management</a>
+            <a class="dropdown-item" href="#">Attendance Management</a>
         </div>
         </li>
         <li class="nav-item dropdown">
@@ -55,7 +56,7 @@
             Analytics
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-            <a class="dropdown-item" href="#">Reports</a>
+            <a class="dropdown-item" href="#" id="manage_reports">Reports</a>
             <a class="dropdown-item" href="#">A2</a>
             <a class="dropdown-item" href="#">A3</a>
         </div>
@@ -63,3 +64,18 @@
     </ul>
     </div>
 </nav>
+
+<script>
+    $('#manage_metadata').click(function(){
+       window.location.href = '/manage_metadata';
+   });
+ 
+   $('#manage_employee').click(function(){
+       window.location.href = '/manage_employee';
+   });
+ 
+   $('#manage_reports').click(function(){
+       window.location.href = '/manage_reports';
+   });
+ 
+ </script>

@@ -23,13 +23,13 @@ def validate_login():
     else:
         return jsonify({"status" : False})
     
-@app.route('/metadata')
+@app.route('/manage_metadata')
 def metadata():
     user_name = "Admin"
-    return render_template('reports', username = user_name)
+    return render_template('metadata.html', username = user_name)
 
-@app.route('/reports')
+@app.route('/manage_reports')
 def reports():
     user_name = "Admin"
-    return render_template('reports', username = user_name)
+    return render_template('reports.html', username = user_name)
 
