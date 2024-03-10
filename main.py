@@ -12,8 +12,12 @@ def integrate():
         
 
 
-        fin = open("modules/index.py", "r")
-        app_index = fin.read()
+        fin = open("modules/web.py", "r")
+        app_web = fin.read()
+        fin.close()
+
+        fin = open("modules/common.py", "r")
+        app_common = fin.read()
         fin.close()
 
         fin = open("modules/employee_management/common/employee_management.py", "r")
@@ -33,7 +37,7 @@ def integrate():
         fin.close()
 
 
-        combine_file_content = app_init + app_index + web_employee_management + common_employee_management + common_attendance + web_attendance + app_run 
+        combine_file_content = app_init + app_web + app_common + web_employee_management + common_employee_management + common_attendance + web_attendance + app_run 
         
         fout = open("employee.py", "w")
         fout.write(combine_file_content)

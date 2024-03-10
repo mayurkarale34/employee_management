@@ -38,3 +38,14 @@ def add_employee():
     user_name = "Admin"
     return render_template('add_employee.html', username = user_name)
 
+@app.route('/add_metadata', methods=['POST'])
+def add_metadata():
+    try:
+        request_data = dict(request.form)
+        print(request_data)
+        add_metadata_response = add_metadata_info(request_data)
+        
+        return redirect('/manage_metadata')
+    except Exception as e:
+        print(str(e))
+        return redirect('/manage_metadata')
