@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/tableExport.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap_table.js"></script>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#Attendance_management">Attendance</a></li>
+                
+            </ul>
+        </div>
+        <br>
+        <div>
+            <div id="toolbar">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#add_attendance_modal">Add Attendance</button>
+            </div>
+            <table class="table"
+                data-toggle="table"
+                data-search="true"
+                data-toolbar="#toolbar"
+                data-show-columns="true"
+                data-url="/retrive_user_details"
+            >
+                <thead>
+                    <tr>
+                        <th data-field="employee_name">employee name</th>
+                        <th data-field="attendance_date">attendance date</th>
+                        <th data-field="clock_in_time">clock in time</th>
+                        <th data-field="clock_out_time">clock out time By</th>
+                        <th data-field="working_hours">Added On</th>
+                        <th data-field="over_time">over time </th>
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add_attendance_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/add_attendance" method="POST">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Add Attendance</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="type">Type</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <select class="form-control" name="type" id="type">
+                                            <option value="">Time</option>
+                                            <option value="working hours">working hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="element">Element</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" id="element" name="element" class="form-control">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
