@@ -1,10 +1,10 @@
 
 # Manage attendance_management routes
-@app.route('/Attendance_management')
-def Attendance_management():
+@app.route('/attendance')
+def attendance():
     try:
         user_name = "Admin"
-        return render_template('Attendance_management.html', username = user_name)
+        return render_template('attendance.html', username = user_name)
     except Exception as e:
-        print("Exception in Attendance_management() : ", str(e))
+        print("Exception in attendance() : ", str(e))
         return redirect('/home')
