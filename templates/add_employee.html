@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/tableExport.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap_table.js"></script>
+</head>
+<body>
+    
+
+    {% include 'header.html' %}
+    <div class="container-fluid">
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#manage_employee">Employee Management</a></li>
+                
+            </ul>
+        </div>
+        <br>
+        <div>
+            <div id="toolbar">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#add_employee">Add Employee</button>
+            </div>
+            <table class="table"
+                data-toggle="table"
+                data-search="true"
+                data-toolbar="#toolbar"
+                data-show-columns="true"
+                data-url="/retrive_user_details"
+            >
+                <thead>
+                    <tr>
+                        <th data-field="employee_id">ID</th>
+                        <th data-field="employee_name">Name</th>
+                        <th data-field="mobile_no">Mobile_Number</th>
+                        <th data-field="email_id">Email_ID</th>
+                        <th data-field="doj">Date_Of_Joining</th>
+                        <th data-field="department">Department</th>
+                        <th data-field="job_title">Job_Title</th>
+                        <th data-field="employment_type">Employment_Type</th>
+                        
+
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add_employee">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/add_employee" method="POST">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Add Employee</h3>
+                    </div>
+
+                    
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+
+</html>

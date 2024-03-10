@@ -33,3 +33,8 @@ def reports():
     user_name = "Admin"
     return render_template('reports.html', username = user_name)
 
+@app.route('/add_employee')
+def add_employee():
+    user_name = "Admin"
+    return render_template('add_employee.html', username = user_name)
+

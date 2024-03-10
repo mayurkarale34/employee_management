@@ -13,6 +13,13 @@
 <body>
     {% include 'header.html' %}
     <h4>Welcome to employee Management System</h4>
+    <br>
+    <button type="button" class="btn btn-primary " id="add_employee">Add Employee</button>
     {% include 'footer.html' %}
 </body>
+<script>
+    $('#add_employee').click(function(){
+        window.location.href = '/add_employee';
+    });
+</script>
 </html>
