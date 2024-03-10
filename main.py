@@ -24,8 +24,16 @@ def integrate():
         web_employee_management = fin.read()
         fin.close()
 
+        fin = open("modules/attendance/common/attendance.py", "r")
+        common_attendance = fin.read()
+        fin.close()
 
-        combine_file_content = app_init + app_index + web_employee_management + common_employee_management + app_run 
+        fin = open("modules/attendance/web/attendance.py", "r")
+        web_attendance = fin.read()
+        fin.close()
+
+
+        combine_file_content = app_init + app_index + web_employee_management + common_employee_management + common_attendance + web_attendance + app_run 
         
         fout = open("employee.py", "w")
         fout.write(combine_file_content)
