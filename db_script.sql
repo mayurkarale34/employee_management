@@ -9,6 +9,18 @@ CREATE TABLE `tb_metadata` (
   `element` VARCHAR(45) NULL,
   `type` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+  
+-- Select created database
+use employee_new;
+
+CREATE TABLE attendance ( 
+ `employee_name` VARCHAR(50), 
+ `clock_in_time` TIME
+); 
+
+
+
+
 
 
 

@@ -16,7 +16,7 @@
     <script type="text/javascript" src="/static/js/bootstrap_table.js"></script>
 </head>
 <body>
-    
+    {% include 'header.html' %}
     <div class="container-fluid">
         <div>
             <ul class="nav nav-tabs">
@@ -41,7 +41,7 @@
                         <th data-field="employee_name">employee name</th>
                         <th data-field="attendance_date">attendance date</th>
                         <th data-field="clock_in_time">clock in time</th>
-                        <th data-field="clock_out_time">clock out time By</th>
+                        <th data-field="clock_out_time">clock out time</th>
                         <th data-field="working_hours">Added On</th>
                         <th data-field="over_time">over time </th>
 
@@ -56,20 +56,20 @@
             <div class="modal-content">
                 <form action="/add_attendance" method="POST">
                     <div class="modal-header">
-                        <h3 class="modal-title">Add Attendance</h3>
+                        <h3 class="modal-title">add attendance</h3>
                     </div>
 
                     <div class="modal-body">
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-2 control-label">
-                                    <label for="type">Type</label>
+                                <div class="col-md-3 control-label">
+                                    <label for="type">employee_name</label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-9">
                                     <div class="input-group">
-                                        <select class="form-control" name="type" id="type">
-                                            <option value="">Time</option>
-                                            <option value="working hours">working hours</option>
+                                        <input type="text" id="employee_name" name="employee_name" class="form-control">
+                                        <select class="form-control" name="employee_name" id="employee_name"> 
+                                            <option value=""> enter employee name</option>
                                         </select>
                                     </div>
                                 </div>
@@ -79,12 +79,12 @@
                             <br>
 
                             <div class="row">
-                                <div class="col-md-2 control-label">
-                                    <label for="element">Element</label>
+                                <div class="col-md-3 control-label">
+                                    <label for="clock_in_time">clock_in_time</label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-9">
                                     <div class="input-group">
-                                        <input type="text" id="element" name="element" class="form-control">
+                                        <input type="time" id="clock_in_time" name="clock_in_time" class="form-control">
                                     </div>
                                 </div>
                                 
@@ -100,6 +100,6 @@
             </div>
         </div>
     </div>
-    
+    {% include 'footer.html' %}
 </body>
 </html>
