@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metadata</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-table.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/tableExport.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap_table.js"></script>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container-fluid">
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab">Leave Management</a></li>
+                
+            </ul>
+        </div>
+        <br>
+        <div>
+            <div id="toolbar">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#add_metadata_modal">Add Leave</button>
+            </div>
+            <table class="table"
+                data-toggle="table"
+                data-search="true"
+                data-toolbar="#toolbar"
+                data-show-columns="true"
+                data-url="/retrive_user_details"
+            >
+                <thead>
+                    <tr>
+                        <th data-field="id">ID</th>
+                        <th data-field="leave_type">Leave Type</th>
+                        <th data-field="start_date">Start Date</th>
+                        <th data-field="end_date">End Date</th>
+                        <th data-field="leave_duration">Leave Duration</th>
+                        <th data-field="leave_duration">Leave Status</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+    </div>
+    <div class="modal fade" id="add_metadata_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/add_metadata" method="POST">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Apply Leave</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="type"> Leave Type</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <select class="form-control" name="type" id="type">
+                                            <option value="">Plese Select Leave Type</option>
+                                            <option value="sick leave">Sick Leave</option>
+                                            <option value="casual leave">casual Leave</option>
+                                            <option value="maternity leave">Maternity Leave</option>
+                                            <option value="paternity leave">Paternity Leave</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+            
+
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="start date">Start Date</label>
+                                    
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group input-daterange">
+                                        <input type="text" class="form-control" value="2012-04-05">
+                                    </div>
+                                </div>
+                         
+                                <br>
+                                    
+                                </div>
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="start date">End Date</label>
+                                    
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="-input-group input-daterange">
+                                        <input type="text" class="form-control" value="2012-04-05">
+                                    </div>
+                                </div>
+                             <br>   
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="duration">Duration</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" id="duration" name="durationt" class="form-control">
+                                    </div>
+                                </div>
+                              
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-md-2 control-label">
+                                    <label for="duration">Leave Status</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" id="" name="durationt" class="form-control">
+                                    </div>
+                                </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Apply</button>
+                        <button type="submit" class="btn btn-primary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
