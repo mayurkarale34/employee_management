@@ -62,24 +62,29 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-2 control-label">
+                                <div class="col-md-4 control-label">
                                     <label for="type">Employee Name</label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <div class="input-group">
-                                        <input type="text" id="duration" name="durationt" class="form-control">   
+                                        <select class="form-control" name="employee_name" id="employee_name"> 
+                                            <option value="">Select Employee</option>
+                                            <option value="Pranita">Pranita</option>
+                                            <option value="Sujata">Sujata</option>
+                                            <option value="Akshta">Akshta</option>
+                                        </select>
                                     </div>
                                 </div>
                                 
                             </div>
             
-
+                            <br>
                             <div class="row">
-                                <div class="col-md-2 control-label">
+                                <div class="col-md-4 control-label">
                                     <label for="start date">Earn Leave</label>
                                     
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <div class="input-group">
                                         <input type="text" id="duration" name="durationt" class="form-control">
                                     </div>
@@ -87,12 +92,13 @@
                          
                                     
                             </div>
+                            <br>
                             <div class="row">
-                                <div class="col-md-2 control-label">
+                                <div class="col-md-4 control-label">
                                     <label for="start date">Casual Leave</label>
                                     
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <div class="input-group">
                                         <input type="text" id="duration" name="durationt" class="form-control">
                                     </div>
@@ -100,11 +106,12 @@
                                 
                                 
                             </div>
+                            <br>
                             <div class="row">
-                                <div class="col-md-2 control-label">
+                                <div class="col-md-4 control-label">
                                     <label for="duration">Maternity Leave</label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <div class="input-group">
                                         <input type="text" id="duration" name="durationt" class="form-control">
                                     </div>
@@ -112,13 +119,13 @@
                               
                             </div>
 
-                        
+                            <br>
 
                             <div class="row">
-                                <div class="col-md-2 control-label">
+                                <div class="col-md-4 control-label">
                                     <label for="duration">Paternity Leave</label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <div class="input-group">
                                         <input type="text" id="" name="durationt" class="form-control">
                                     </div>
@@ -129,8 +136,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Add</button>
-                        <button type="submit" class="btn btn-primary">Cancel</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
