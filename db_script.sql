@@ -18,9 +18,9 @@ CREATE TABLE attendance (
  `clock_in_time` TIME
 ); 
 
-
-
-
-
-
+CREATE TABLE `employee_new`.`tb_attendance` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `employee_name` VARCHAR(45) NULL,
+  `clock_in` DATETIME NULL,
+  PRIMARY KEY (`id`));
 
