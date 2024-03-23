@@ -33,19 +33,4 @@ def reports():
     user_name = "Admin"
     return render_template('reports.html', username = user_name)
 
-@app.route('/add_metadata', methods=['POST'])
-def add_metadata():
-    connection = app._engine.connect()
-    transaction = connection.begin()
-    try:
-        request_data = dict(request.form)
-        print(request_data)
-        add_metadata_response = add_to_database(request_data, "tb_metadata", connection)
-        transaction.commit()
-        connection.close()
-        return redirect('/manage_metadata')
-    except Exception as e:
-        transaction.rollback()
-        connection.close()
-        print(str(e))
-        return redirect('/manage_metadata')
+

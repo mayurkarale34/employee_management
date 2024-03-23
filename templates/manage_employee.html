@@ -59,6 +59,7 @@
                         <th data-field="department">Department</th>
                         <th data-field="job_title">Job Title</th>
                         <th data-field="employment_type">Employment Type</th>
+                        <th data-field="employment_status">Employment Status</th>
                         <th data-field="salary">Salary</th>
                         <th data-field="afi">Areas for improvement</th>
                         <th data-field="achievements">Achievements</th>
@@ -138,10 +139,17 @@
                                     <label for="employment_type">Employment Type</label>
                                     <select class="form-control" id="employment_type" name="employment_type">
                                         <option value="">Select</option>
-                                        <option value="part_timr">Part Time</option>
+                                        <option value="part_time">Part Time</option>
                                         <option value="full_time">Full Time</option>
                                         <option value="internship">Internship</option>
                                         <option value="contractual">Contractual</option>
+                                    </select>
+                                    <label for="employment_status">Employment status</label>
+                                    <select class="form-control" id="employment_status" name="employment_status">
+                                        <option value="">Select</option>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                        
                                     </select>
                                     <label for="salary">Salary</label>
                                     <input type="text" class="form-control" id="salary" name="salary">
