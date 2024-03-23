@@ -52,3 +52,10 @@ CREATE TABLE tb_employee_info (
     certifications VARCHAR(100),
     skills_acquired VARCHAR(100)
 );
+
+CREATE TABLE `employee_new`.`tb_attendance` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `employee_name` VARCHAR(45) NULL,
+  `clock_in` TIME NULL,
+  `attendance_date` DATE NULL,
+  PRIMARY KEY (`id`));

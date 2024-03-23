@@ -21,7 +21,8 @@ def add_attendance():
 
         data = {
             "employee_name" : request_data['employee_name'],
-            "clock_in" : datetime.strptime(request_data['clock_in_time'], '%H:%M').strftime('%Y-%m-%d %H:%M:%S')
+            "clock_in" : datetime.strptime(request_data['clock_in_time'], '%H:%M').strftime('%H:%M:%S'),
+            "attendance_date" : datetime.strptime(request_data['attendance_date'], '%Y-%M-%d').strftime('%Y-%m-%d %H:%M:%S')
         }
         
         add_metadata_response = add_to_database(data, "tb_attendance", connection)
