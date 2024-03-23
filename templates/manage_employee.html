@@ -79,8 +79,8 @@
                 <div class="modal-header">
                     <h3 class="modal-title">Add Employee</h3>
                 </div>
+                <form action="/add_employee" method="POST">
                 <div class="modal-body">
-                    <form action="/add_employee" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                             
@@ -129,7 +129,7 @@
                             
                                 <div class="form-group">
                                     <label for="employee_email">Employee Email</label>
-                                    <input type="email" class="form-control" id="employee_email" name="employee_email">
+                                    <input type="email" class="form-control" id="email_id" name="email_id">
                                     <label for="doj">Date Of Joining</label>
                                     <input type="date" class="form-control" id="doj" name="doj">
                                     <label for="department">Department</label>
@@ -167,12 +167,13 @@
                             
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+            </form>
             </div>
         </div>
     </div>

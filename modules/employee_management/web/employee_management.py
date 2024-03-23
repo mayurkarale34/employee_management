@@ -19,13 +19,13 @@ def add_employee():
         
 
         data = {
-            "employee_id" : request_data['employee_id'],
+            "employee_id" : generate_employee_id(request_data['fname'], request_data['lname']),
             "first_name" : request_data['fname'],
             "middle_name" : request_data['mname'],
             "last_name" : request_data['lname'],
             "mobile_number" : request_data['mobile_no'],
             "address" : request_data['address'],
-            "date_of_birth" : request_data['dob'],
+            "date_of_birth" : '2023-03-23', #request_data['dob']
             "blood_group" : request_data['bloodgroup'],
             "gender" : request_data['gender'],
             "marital_status" : request_data['marital_status'],
@@ -33,11 +33,11 @@ def add_employee():
             "percentage_cgpa" : request_data['percentage'],
             "year_of_passing" : request_data['yop'],
             "email" : request_data['email_id'],
-            "date_of_joining" : request_data['doj'],
+            "date_of_joining" : '2023-03-23', #request_data['doj']
             "department" : request_data['department'],
             "job_title" : request_data['job_title'],
             "employment_type" : request_data['employment_type'],
-            "employment_status" : request_data['status'],
+            "employment_status" : "Active",
             "salary" : request_data['salary'],
             "areas_for_improvement" : request_data['afi'],
             "achievements" : request_data['achievements'],
