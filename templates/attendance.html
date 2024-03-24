@@ -14,6 +14,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="/static/js/tableExport.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap_table.js"></script>
+    <script>
+        function checkforblank() {
+                        
+            if (document.getElementById('employee_name').value == "") {
+                alert("please select employee name")
+                document.getElementById('employee_name').style.borderColor = "red";
+                return false;
+                }
+
+            else if (document.getElementById('clock_in_time').value == "") {
+                alert("please select clock in time")
+                document.getElementById('clock_in_time').style.borderColor = "red";
+                return false;
+                }
+
+            else if (document.getElementById('attendance_date').value == "") {
+                alert("please select attendance date")
+                document.getElementById('attendance_date').style.borderColor = "red";
+                return false;
+                }
+            
+            }
+    </script>
 </head>
 <body>
     {% include 'header.html' %}
@@ -53,7 +76,7 @@
     <div class="modal fade" id="add_attendance_modal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="/add_attendance" method="POST">
+                <form action="/add_attendance" method="POST" onsubmit = "return checkforblank()">
                     <div class="modal-header">
                         <h3 class="modal-title">Add Attendance</h3>
                     </div>
