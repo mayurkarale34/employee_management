@@ -59,3 +59,15 @@ CREATE TABLE `employee_new`.`tb_attendance` (
   `clock_in` TIME NULL,
   `attendance_date` DATE NULL,
   PRIMARY KEY (`id`));
+
+-- Select created database
+use employee_new;
+
+  CREATE TABLE `tb_overallleave` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `employee_name` VARCHAR(45) NULL,
+  `earn_leave` INT,
+  `casual_leave` INT, 
+  `meternity_leave` INT,
+  `peternity_leave` INT,
+  PRIMARY KEY (`id`));

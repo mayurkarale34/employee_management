@@ -27,7 +27,7 @@
         <br>
         <div>
             <div id="toolbar">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#add_metadata_modal">Add Overall Leave</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#add_overallleave_management_modal">Add Overall Leave</button>
             </div>
             <table class="table"
                 data-toggle="table"
@@ -51,10 +51,10 @@
         </div>
 
     </div>
-    <div class="modal fade" id="add_metadata_modal">
+    <div class="modal fade" id="add_overallleave_management_modal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="/add_metadata" method="POST">
+                <form action="/add_overallleave_managenent" method="POST">
                     <div class="modal-header">
                         <h3 class="modal-title">Add Leave</h3>
                     </div>
@@ -81,12 +81,12 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-4 control-label">
-                                    <label for="start date">Earn Leave</label>
+                                    <label for="earn_leave">Earn Leave</label>
                                     
                                 </div>
                                 <div class="col-md-8">
                                     <div class="input-group">
-                                        <input type="text" id="duration" name="durationt" class="form-control">
+                                        <input type="text" id="earn_leave" name="earn_leave" class="form-control">
                                     </div>
                                 </div>
                          
@@ -95,12 +95,12 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-4 control-label">
-                                    <label for="start date">Casual Leave</label>
+                                    <label for="casual_leave">Casual Leave</label>
                                     
                                 </div>
                                 <div class="col-md-8">
                                     <div class="input-group">
-                                        <input type="text" id="duration" name="durationt" class="form-control">
+                                        <input type="text" id="casual_leave" name="casual_leave" class="form-control">
                                     </div>
                                 </div>
                                 
@@ -109,11 +109,11 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-4 control-label">
-                                    <label for="duration">Maternity Leave</label>
+                                    <label for="maternity_leave">Maternity Leave</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="input-group">
-                                        <input type="text" id="duration" name="durationt" class="form-control">
+                                        <input type="text" id="maternity_leave" name="maternity_leave" class="form-control">
                                     </div>
                                 </div>
                               
@@ -123,11 +123,11 @@
 
                             <div class="row">
                                 <div class="col-md-4 control-label">
-                                    <label for="duration">Paternity Leave</label>
+                                    <label for="paternity_leave">Paternity Leave</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="input-group">
-                                        <input type="text" id="" name="durationt" class="form-control">
+                                        <input type="text" id="paternity_leave" name="paternity_leave" class="form-control">
                                     </div>
                                 </div>
                            

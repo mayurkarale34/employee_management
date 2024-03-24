@@ -9,3 +9,28 @@ def overallleave_management():
         print("Exception in overallleave_management() : ", str(e))
         return redirect('/home')
     
+# add overall leave
+@app.route('/add_overallleave_managenent', methods=['POST'])
+def add_overallleave_managenent():
+    connection = app._engine.connect()
+    transaction = connection.begin()
+    try:
+        request_data = dict(request.form)
+        data = {
+            "leave_type" : request_data['leave_type'],
+            "earn_leave" : request_data['earn_leave'],
+            "casual_leave" : request_data['casual_leave'],
+            "meternity_leave" : request_data['maternity_leave'],
+            "peternity_leave" : request_data['paternity_leave'],
+           
+        }
+        
+        add_metadata_response = add_to_database(data, "tb_overallleave", connection)
+        transaction.commit()
+        connection.close()
+        return redirect('/overallleave_management')
+    except Exception as e:
+        transaction.rollback()
+        connection.close()
+        print(str(e))
+        return redirect('/overallleave_management')
