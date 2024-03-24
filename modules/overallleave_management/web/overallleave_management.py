@@ -17,7 +17,7 @@ def add_overallleave_managenent():
     try:
         request_data = dict(request.form)
         data = {
-            "leave_type" : request_data['leave_type'],
+            "employee_name" : request_data['employee_name'],
             "earn_leave" : request_data['earn_leave'],
             "casual_leave" : request_data['casual_leave'],
             "meternity_leave" : request_data['maternity_leave'],
