@@ -3,8 +3,7 @@
 @app.route('/attendance')
 def attendance():
     try:
-        user_name = "Admin"
-        return render_template('attendance.html', username = user_name)
+        return render_template('attendance.html')
     except Exception as e:
         print("Exception in attendance() : ", str(e))
         return redirect('/home')
@@ -45,7 +44,7 @@ def retrive_attendance():
     }
     try:
         print('Hello')
-        select_query = f"Select * from tb_attendance"
+        select_query = f"Select employee_name, date_format(clock_in, '%H:%i:%s') as clock_in, date_format(attendance_date, '%d-%m-%Y') as attendance_date from tb_attendance"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount:
             columns = result.keys()

@@ -30,12 +30,12 @@ def validate_login():
 @app.route('/manage_metadata')
 def metadata():
     user_name = "Admin"
-    return render_template('metadata.html', username = user_name)
+    return render_template('metadata.html')
 
 @app.route('/manage_reports')
 def reports():
     user_name = "Admin"
-    return render_template('reports.html', username = user_name)
+    return render_template('reports.html')
 
 @app.route('/add_metadata', methods=['POST'])
 def add_metadata():

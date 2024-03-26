@@ -3,10 +3,9 @@
 @app.route('/employee_management')
 def manage_employee():
     try:
-        user_name = "Admin"
         cities = retrive_metadata_by_type('City')['data']
         departments = retrive_metadata_by_type('Department')['data']
-        return render_template('manage_employee.html', username = user_name, cities = cities, departments = departments)
+        return render_template('manage_employee.html', cities = cities, departments = departments)
     except Exception as e:
         print("Exception in employee_management() : ", str(e))
         return redirect('/home')
