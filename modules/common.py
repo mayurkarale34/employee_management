@@ -51,3 +51,4 @@ def retrive_metadata_by_type(type):
         print(str(e))
         response['message'] = "Error while getting metadata, Please contact to admin"
         return response
+ 
