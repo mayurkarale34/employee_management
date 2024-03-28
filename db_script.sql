@@ -68,6 +68,7 @@ use employee_new;
   `employee_name` VARCHAR(45) NULL,
   `earn_leave` INT,
   `casual_leave` INT, 
+  `sick_leave` INT,
   `meternity_leave` INT,
   `peternity_leave` INT,
   PRIMARY KEY (`id`));
