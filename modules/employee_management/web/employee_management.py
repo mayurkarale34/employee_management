@@ -69,7 +69,7 @@ def retrive_user_details():
         "message" : ""
     }
     try:
-        select_query = f"Select id, employee_id, first_name, middle_name, last_name, mobile_number, address, date_of_birth, blood_group, gender, marital_status, highest_qualification_specialization, percentage_cgpa, year_of_passing, email, city, date_of_joining, department, job_title, employment_type, employment_status, salary, areas_for_improvement, achievements, workshop_attended, certifications, skills_acquired from tb_employee_info;"
+        select_query = f"Select id, employee_id, first_name, middle_name, last_name, mobile_number, city, date_of_birth, blood_group, gender, marital_status, highest_qualification_specialization, percentage_cgpa, year_of_passing, email, city, date_of_joining, department, job_title, employment_type, employment_status, salary, areas_for_improvement, achievements, workshop_attended, certifications, skills_acquired from tb_employee_info;"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount:
             columns = result.keys()
