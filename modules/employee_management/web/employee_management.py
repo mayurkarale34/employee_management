@@ -60,3 +60,25 @@ def add_employee():
         print(str(e))
         return redirect('/employee_management')
     
+
+@app.route('/retrive_user_details', methods=['GET'])
+def retrive_user_details():
+    response = {
+        "rows" : [],
+        "total" : 0,
+        "message" : ""
+    }
+    try:
+        select_query = f"Select id, employee_id, first_name, middle_name, last_name, mobile_number, address, date_of_birth, blood_group, gender, marital_status, highest_qualification_specialization, percentage_cgpa, year_of_passing, email, city, date_of_joining, department, job_title, employment_type, employment_status, salary, areas_for_improvement, achievements, workshop_attended, certifications, skills_acquired from tb_employee_info;"
+        result = app._engine.connect().execute(text(select_query))
+        if result.rowcount:
+            columns = result.keys()
+            for row in result:
+                row_dict = dict(zip(columns, row))
+                response['rows'].append(row_dict)
+            
+            response['total'] = len(response['rows'])
+        return jsonify(response)
+    except Exception as e:
+        print(str(e))
+        return jsonify(response)

@@ -40,6 +40,7 @@ CREATE TABLE tb_employee_info (
     percentage_cgpa VARCHAR(5),
     year_of_passing VARCHAR(10),
     email VARCHAR(100),
+    city VARCHAR(100),
     date_of_joining DATE,
     department VARCHAR(50),
     job_title VARCHAR(20),
