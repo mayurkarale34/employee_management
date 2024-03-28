@@ -15,3 +15,23 @@ def generate_employee_id(first_name, last_name):
     employee_id = f"{first_char_first_name}{first_char_last_name}{random_chars}{random_digits}"
     
     return employee_id
+
+# Get all employee  
+def get_all_employees():
+    response = {
+        "data" : [],
+        "message" : ""
+    }
+    try:
+        select_query = f"Select employee_id, concat(first_name, ' ', if(middle_name is null, '', concat(middle_name, ' ')), last_name) as employee_name from tb_employee_info where employment_status = 'Active';"
+        result = app._engine.connect().execute(text(select_query))
+        if result.rowcount:
+            columns = result.keys()
+            for row in result:
+                row_dict = dict(zip(columns, row))
+                response['data'].append(row_dict)
+            
+        return response
+    except Exception as e:
+        print(str(e))
+        return response

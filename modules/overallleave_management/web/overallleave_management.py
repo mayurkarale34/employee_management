@@ -3,7 +3,8 @@
 @app.route('/overallleave_management')
 def overallleave_management():
     try:
-        return render_template('overallleave_management.html')
+        employee_list = get_all_employees()['data']
+        return render_template('overallleave_management.html', employee_list = employee_list)
     except Exception as e:
         print("Exception in overallleave_management() : ", str(e))
         return redirect('/home')
