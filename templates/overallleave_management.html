@@ -20,6 +20,41 @@
     <script src="/static/js/daterangepicker.min.js"></script>
     <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/static/js/select2.min.js"></script>
+
+    <script>
+        function checkforblank() {
+                        
+            if (document.getElementById('employee_name').value == "") {
+                alert("please select employee name")
+                document.getElementById('employee_name').style.borderColor = "red";
+                return false;
+                }
+
+            else if (document.getElementById('earn_leave').value == "") {
+                alert("please select earn leave")
+                document.getElementById('earn_leave').style.borderColor = "red";
+                return false;
+                }
+
+            else if (document.getElementById('casual_leave').value == "") {
+                alert("please select casual leave")
+                document.getElementById('casual_leave').style.borderColor = "red";
+                return false;
+                }
+            
+            else if (document.getElementById('maternity_leave').value == "") {
+                alert("please select maternity leave")
+                document.getElementById('maternity_leave').style.borderColor = "red";
+                return false;
+                }
+
+            else if (document.getElementById('paternity_leave').value == "") {
+                alert("please select paternity leave")
+                document.getElementById('paternity_leave').style.borderColor = "red";
+                return false;
+                }
+            }
+    </script>
 </head>
 <body>
     {% include 'header.html' %}
@@ -45,12 +80,12 @@
                 <thead>
                     <tr>
                         <th data-field="id"> Employee ID</th>
-                        <th data-field="leave_type">Employee Name</th>
-                        <th data-field="start_date">Earn Leave</th>
-                        <th data-field="end_date">casual Leave</th>
-                        <th data-field="leave_duration">Sick Leave</th>
-                        <th data-field="leave_duration">Maternity Leave</th>
-                        <th data-field="leave_duration">Paternity Leave</th>
+                        <th data-field="employee_name">Employee Name</th>
+                        <th data-field="earn_leave">Earn Leave</th>
+                        <th data-field="casual_leave">casual Leave</th>
+                        <th data-field="sick_leave">Sick Leave</th>
+                        <th data-field="maternity_leave">Maternity Leave</th>
+                        <th data-field="paternity_leave">Paternity Leave</th>
                     </tr>
                 </thead>
             </table>
@@ -60,7 +95,7 @@
     <div class="modal fade" id="add_overallleave_management_modal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="/add_overallleave_managenent" method="POST">
+                <form action="/add_overallleave_managenent" method="POST" onsubmit = "return checkforblank()">
                     <div class="modal-header">
                         <h3 class="modal-title">Add Leave</h3>
                     </div>

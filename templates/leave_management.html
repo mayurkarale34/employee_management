@@ -33,14 +33,14 @@
         <br>
         <div>
             <div id="toolbar">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#add_metadata_modal">Add Leave</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#add_leave_management_modal">Add Leave</button>
             </div>
             <table class="table"
                 data-toggle="table"
                 data-search="true"
                 data-toolbar="#toolbar"
                 data-show-columns="true"
-                data-url="/retrive_user_details"
+                data-url=""
             >
                 <thead>
                     <tr>
@@ -56,10 +56,10 @@
         </div>
 
     </div>
-    <div class="modal fade" id="add_metadata_modal">
+    <div class="modal fade" id="add_leave_management_modal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="/add_metadata" method="POST">
+                <form action="/add_leave_management" method="POST">
                     <div class="modal-header">
                         <h3 class="modal-title">Apply Leave</h3>
                     </div>
@@ -74,17 +74,17 @@
                                     <div class="input-group">
                                         <select class="form-control" name="type" id="type">
                                             <option value="">Plese Select Leave Type</option>
-                                            <option value="sick leave">Sick Leave</option>
-                                            <option value="casual leave">casual Leave</option>
-                                            <option value="maternity leave">Maternity Leave</option>
-                                            <option value="paternity leave">Paternity Leave</option>
+                                            <option value="start_date">Start Date</option>
+                                            <option value="end_date">End Date</option>
+                                            <option value="duration">Duratio</option>
+                                            <option value="leave_status">Leave Status</option>
                                         </select>
                                     </div>
                                 </div>
                                 
                             </div>
             
-
+                            <br>
                             <div class="row">
                                 <div class="col-md-2 control-label">
                                     <label for="start date">Start Date</label>
@@ -92,26 +92,31 @@
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group input-daterange">
-                                        <input type="text" class="form-control" value="2012-04-05">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
-                         
-                                <br>
+
                                     
-                                </div>
+                             </div>
+
+                            <br>    
                             <div class="row">
                                 <div class="col-md-2 control-label">
-                                    <label for="start date">End Date</label>
+                                    <label for="end_date">End Date</label>
                                     
                                 </div>
                                 <div class="col-md-10">
-                                    <div class="-input-group input-daterange">
-                                        <input type="text" class="form-control" value="2012-04-05">
+                                    <div class="input-group input-daterange">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
-                             <br>   
-                                
-                            </div>
+
+                                <br> 
+
+                                </div>
+
+                            <br>
+
                             <div class="row">
                                 <div class="col-md-2 control-label">
                                     <label for="duration">Duration</label>
@@ -128,11 +133,11 @@
 
                             <div class="row">
                                 <div class="col-md-2 control-label">
-                                    <label for="duration">Leave Status</label>
+                                    <label for="leave_status">Leave Status</label>
                                 </div>
                                 <div class="col-md-10">
                                     <div class="input-group">
-                                        <input type="text" id="" name="durationt" class="form-control">
+                                        <input type="text" id="leave_status" name="leave_status" class="form-control">
                                     </div>
                                 </div>
                            
@@ -142,7 +147,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Apply</button>
-                        <button type="submit" class="btn btn-primary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">submit</button>
                     </div>
                 </form>
             </div>
