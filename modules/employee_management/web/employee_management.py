@@ -5,7 +5,9 @@ def manage_employee():
     try:
         cities = retrive_metadata_by_type('City')['data']
         departments = retrive_metadata_by_type('Department')['data']
-        return render_template('manage_employee.html', cities = cities, departments = departments)
+        role = retrive_metadata_by_type('Role')['data']
+        bloodgroup = retrive_metadata_by_type('BloodGroup')['data']
+        return render_template('manage_employee.html', cities = cities, departments = departments, role = role, bloodgroup = bloodgroup)
     except Exception as e:
         print("Exception in employee_management() : ", str(e))
         return redirect('/home')
@@ -25,7 +27,7 @@ def add_employee():
             "middle_name" : request_data['mname'],
             "last_name" : request_data['lname'],
             "mobile_number" : request_data['mobile_no'],
-            "address" : request_data['address'],
+            "city" : request_data['city'],
             "date_of_birth" : '2023-03-23', #request_data['dob']
             "blood_group" : request_data['bloodgroup'],
             "gender" : request_data['gender'],

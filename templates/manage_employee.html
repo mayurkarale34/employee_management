@@ -111,7 +111,12 @@
                                     <label for="dob">Date Of Birth</label>
                                     <input type="date" class="form-control" id="dob" name="dob" required>
                                     <label for="bloodgroup">Blood Group</label>
-                                    <input type="text" class="form-control" id="bloodgroup" name="bloodgroup" pattern="^(A|B|AB|O)[+-]$">
+                                    <select class="form-control" id="bloodgroup" name="bloodgroup">
+                                        <option value="">Please select Blood Group</option>
+                                        {% for bloodgroup in bloodgroup %}
+                                        <option value="{{bloodgroup.element}}">{{bloodgroup.element}}</option>
+                                        {% endfor %}
+                                    </select>
                                     <label for="gender">Gender</label>
                                     <select class="form-control" id="gender" name="gender">
                                         <option value="">Select</option>
@@ -155,7 +160,12 @@
                                     </select>
                                     
                                     <label for="job_title">Job Title</label>
-                                    <input type="text" class="form-control" id="job_title" name="job_title" required>
+                                    <select class="form-control" id="job_title" name="job_title">
+                                        <option value="">Please select Job Title</option>
+                                        {% for role in role %}
+                                        <option value="{{role.element}}">{{role.element}}</option>
+                                        {% endfor %}
+                                    </select>
                                     <label for="employment_type">Employment Type</label>
                                     <select class="form-control" id="employment_type" name="employment_type" required>
                                         <option value="">Select</option>
