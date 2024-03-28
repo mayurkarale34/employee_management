@@ -9,20 +9,6 @@ CREATE TABLE `tb_metadata` (
   `element` VARCHAR(45) NULL,
   `type` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
-  
--- Select created database
-use employee_new;
-
-CREATE TABLE attendance ( 
- `employee_name` VARCHAR(50), 
- `clock_in_time` TIME
-); 
-
-CREATE TABLE `employee_new`.`tb_attendance` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `employee_name` VARCHAR(45) NULL,
-  `clock_in` DATETIME NULL,
-  PRIMARY KEY (`id`));
 
 CREATE TABLE tb_employee_info (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -31,7 +17,6 @@ CREATE TABLE tb_employee_info (
     middle_name VARCHAR(50),
     last_name VARCHAR(50),
     mobile_number VARCHAR(10) UNIQUE NOT NULL,
-    address VARCHAR(255),
     date_of_birth DATE,
     blood_group VARCHAR(10),
     gender VARCHAR(10),
@@ -60,9 +45,6 @@ CREATE TABLE `employee_new`.`tb_attendance` (
   `clock_in` TIME NULL,
   `attendance_date` DATE NULL,
   PRIMARY KEY (`id`));
-
--- Select created database
-use employee_new;
 
   CREATE TABLE `tb_overallleave` (
   `id` INT NOT NULL AUTO_INCREMENT,
