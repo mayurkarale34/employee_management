@@ -71,8 +71,8 @@
                         <th data-field="employee_name">Employee Name</th>
                         <th data-field="attendance_date">Attendance Date</th>
                         <th data-field="clock_in">Clock In</th>
-                        <th data-field="clock_out_time">Clock Out</th>
-                        <th data-field="working_hours"> Working Hours </th>
+                        <th data-field="clock_out_time" data-visible="false">Clock Out</th>
+                        <th data-field="working_hours" data-visible="false"> Working Hours </th>
 
                     </tr>
                 </thead>
@@ -85,7 +85,7 @@
             <div class="modal-content">
                 <form action="/add_attendance" method="POST" onsubmit = "return checkforblank()">
                     <div class="modal-header">
-                        <h3 class="modal-title">Add Attendance</h3>
+                        <h3 class="modal-title">Attendance</h3>
                     </div>
 
                     <div class="modal-body">
@@ -95,12 +95,9 @@
                                     <label for="type">Employee Name</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="input-group">
-                                        <select class="form-control" name="employee_name" id="employee_name"> 
-                                            <option value="">Select Employee</option>
-                                            <option value="Pranita">Pranita</option>
-                                            <option value="Sujata">Sujata</option>
-                                            <option value="Akshata">Akshata</option>
+                                    <div class="form-group">                                        
+                                        <label for="employee_name">Emp Name</label>
+                                    <input type="text" class="form-control" id="employee_name" name="employee_name">                                    
                                         </select>
                                     </div>
                                 </div>

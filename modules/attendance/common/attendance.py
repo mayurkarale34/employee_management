@@ -26,3 +26,24 @@ def retrive_attendance_by_employee_name(employee_name):
         print(str(e))
         response['message'] = "Error while getting attendance, Please contact to admin"
         return response
+
+
+# Get all attendance
+def get_all_attendance():
+    response = {
+        "data" : [],
+        "message" : ""
+    }
+    try:
+        select_query = f"Select employee_name, clock_in, attendance_date from tb_attendance;"
+        result = app._engine.connect().execute(text(select_query))
+        if result.rowcount:
+            columns = result.keys()
+            for row in result:
+                row_dict = dict(zip(columns, row))
+                response['data'].append(row_dict)
+            
+        return response
+    except Exception as e:
+        print(str(e))
+        return response
