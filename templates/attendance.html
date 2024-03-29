@@ -95,9 +95,13 @@
                                     <label for="type">Employee Name</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="form-group">                                        
-                                        <label for="employee_name">Emp Name</label>
-                                    <input type="text" class="form-control" id="employee_name" name="employee_name">                                    
+                                    <div class="input-group">
+                                        <select class="form-control" name="employee_name" id="employee_name"> 
+                                            <option value="">Select Employee</option>
+                                            {% for employee in employee_list %}
+                                            <option value="{{employee.employee_name}}">{{employee.employee_name}}</option>
+                                            {% endfor %}
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -141,4 +145,11 @@
     </div>
     {% include 'footer.html' %}
 </body>
+<script>
+    // add bootstrap select2 
+    $('select').select2({
+        width : '100%',
+        theme : 'bootstrap'
+    })
+</script>
 </html>

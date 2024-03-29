@@ -323,3 +323,9 @@ function submitForm(form) {
 	});
 	return false;
 }
+
+// add bootstrap select2 
+$('select').select2({
+    width : '100%',
+    theme : 'bootstrap'
+  })

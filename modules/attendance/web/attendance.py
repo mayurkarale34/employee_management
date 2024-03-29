@@ -3,7 +3,8 @@
 @app.route('/attendance')
 def attendance():
     try:
-        return render_template('attendance.html')
+        employee_list = get_all_employees()['data']
+        return render_template('attendance.html', employee_list = employee_list)
     except Exception as e:
         print("Exception in attendance() : ", str(e))
         return redirect('/home')

@@ -16,10 +16,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="/static/js/tableExport.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap_table.js"></script>
-    <script src="/static/js/common.js"></script>
     <script src="/static/js/daterangepicker.min.js"></script>
     <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/static/js/select2.min.js"></script>
+    <script src="/static/js/common.js"></script>
 
     <script>
         function checkforblank() {
@@ -187,4 +187,11 @@
     </div>
     {% include 'footer.html' %}
 </body>
+<script>
+    // add bootstrap select2 
+    $('select').select2({
+        width : '100%',
+        theme : 'bootstrap'
+    })
+</script>
 </html>
