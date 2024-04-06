@@ -101,3 +101,14 @@ VALUES
 ('SLAA5138','Susan','Lopez','Female','1987-09-16','susanlopez@example.com','6663332222','Marketing Assistant', 'Active'),
 ('JKAA5139','Joseph','King','Male','1992-10-30','josephking@example.com','5555557777','Inventory Manager', 'Active'),
 ('KYAA5140','Karen','Young','Female','1986-04-14','karenyoung@example.com','4444443333','Software Engg', 'Active');
+
+CREATE TABLE `tb_leave_applications` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `employee_id` VARCHAR(45) NULL,
+  `leave_type` VARCHAR(45) NULL,
+  `from_date` DATE NULL,
+  `to_date` DATE NULL,
+  `status` VARCHAR(45) NULL,
+  `applied_by` VARCHAR(100) NULL,
+  `applied_on` DATETIME NULL,
+  PRIMARY KEY (`id`));
