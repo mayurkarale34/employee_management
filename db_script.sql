@@ -112,3 +112,6 @@ CREATE TABLE `tb_leave_applications` (
   `applied_by` VARCHAR(100) NULL,
   `applied_on` DATETIME NULL,
   PRIMARY KEY (`id`));
+
+ALTER TABLE `tb_attendance` 
+CHANGE COLUMN `employee_name` `employee_id` VARCHAR(45) NULL DEFAULT NULL ;

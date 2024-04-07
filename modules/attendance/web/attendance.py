@@ -20,7 +20,7 @@ def add_attendance():
         # current_datetime = datetime.now()
 
         data = {
-            "employee_name" : request_data['employee_name'],
+            "employee_id" : request_data['employee_id'],
             "clock_in" : datetime.strptime(request_data['clock_in_time'], '%H:%M').strftime('%H:%M:%S'),
             "attendance_date" : datetime.strptime(request_data['attendance_date'], '%Y-%M-%d').strftime('%Y-%m-%d %H:%M:%S')
         }
@@ -44,8 +44,7 @@ def retrive_attendance():
         "message" : ""
     }
     try:
-        print('Hello')
-        select_query = f"Select employee_name, date_format(clock_in, '%H:%i:%s') as clock_in, date_format(attendance_date, '%d-%m-%Y') as attendance_date from tb_attendance"
+        select_query = f"Select tla.employee_id, concat(tei.first_name, ' ', if(tei.middle_name is null, '', concat(tei.middle_name, ' ')), tei.last_name) as employee_name,date_format(tla.attendance_date, '%d-%m-%Y') as attendance_date, date_format(tla.clock_in, '%H:%i:%s') as clock_in from tb_attendance tla left join tb_employee_info tei on(tla.employee_id=tei.employee_id)"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount:
             columns = result.keys()

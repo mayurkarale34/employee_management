@@ -23,7 +23,7 @@ def get_all_employees():
         "message" : ""
     }
     try:
-        select_query = f"Select employee_id, concat(first_name, ' ', if(middle_name is null, '', concat(last_name, ' ')), last_name) as employee_name from tb_employee_info where employment_status = 'Active';"
+        select_query = f"Select employee_id, concat(first_name, ' ', if(middle_name is null, '', concat(middle_name, ' ')), last_name) as employee_name from tb_employee_info where employment_status = 'Active';"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount:
             columns = result.keys()
