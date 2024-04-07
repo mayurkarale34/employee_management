@@ -26,8 +26,13 @@ def apply_for_leave():
             "applied_by" : session['logged_user_name'],
             "applied_on" : datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         }
+
+        duplicate_response = check_duplicate_leave(data)
+        print(duplicate_response)
+        if duplicate_response['status']:
+            return redirect('/leave_management')
         
-        add_metadata_response = add_to_database(data, "tb_leave_applications", connection)
+        apply_leave_response = add_to_database(data, "tb_leave_applications", connection)
         transaction.commit()
         connection.close()
         return redirect('/leave_management')
