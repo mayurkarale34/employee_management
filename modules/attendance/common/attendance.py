@@ -8,7 +8,7 @@ def retrive_attendance_by_employee_name(employee_name):
     }
     try:
 
-        select_query = text(f"Select employee_name, clock_in_time, attendance_date from tb_attendance where employee_name = '{employee_name}';")
+        select_query = text(f"Select clock_in_time, attendance_date, concat(first_name, ' ', if(middle_name is null, '', concat(last_name, ' ')), last_name) as employee_name from tb_attendance where employee_name = '{employee_name}';")
 
         # Executing the query with the provided connection
         result = app._engine.connect().execute(select_query)
