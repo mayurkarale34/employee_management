@@ -110,6 +110,23 @@
                     <br>
                     <div class="row">
                         <div class="col-md-2 control-label">
+                            <label for="mname">Middle Name</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="mname" name="mname">
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="mobile_no" class="required">Mobile Number</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="mobile_no" name="mobile_no">
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
                             <label for="city">City</label>
                         </div>
                         <div class="col-md-4">
@@ -162,114 +179,156 @@
                         </div>
                         
                     </div>
-                        <!-- <div class="row">
-                            <div class="col-md-6">
-                            
-                                <div class="form-group">
-                                    <label for="fname">First Name</label>
-                                    <input type="text" class="form-control" id="fname" name="fname" required>
-                                    <label for="mname">Middle Name</label>
-                                    <input type="text" class="form-control" id="mname" name="mname">
-                                    <label for="lname">Last Name</label>
-                                    <input type="text" class="form-control" id="lname" name="lname" required>
-                                    <label for="mobile_no">Mobile Number</label>
-                                    <input type="text" class="form-control" id="mobile_no" name="mobile_no" required>
-                                    
-                                    <label for="city">City</label>
-                                    <select class="form-control" id="city" name="city">
-                                        <option value="">Please select City</option>
-                                        {% for city in cities %}
-                                        <option value="{{city.element}}">{{city.element}}</option>
-                                        {% endfor %}
-                                        
-                                    </select>
-                                    <label for="dob">Date Of Birth</label>
-                                    <input type="date" class="form-control" id="dob" name="dob">
-                                    <label for="bloodgroup">Blood Group</label>
-                                    <select class="form-control" id="bloodgroup" name="bloodgroup">
-                                        <option value="">Please select Blood Group</option>
-                                        {% for bloodgroup in bloodgroup %}
-                                        <option value="{{bloodgroup.element}}">{{bloodgroup.element}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <label for="gender">Gender</label>
-                                    <select class="form-control" id="gender" name="gender">
-                                        <option value="">Select</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                    <label for="marital_status">Marital Status</label>
-                                    <select class="form-control" id="marital_status" name="marital_status">
-                                        <option value="">Select</option>
-                                        <option value="single">Single</option>
-                                        <option value="married">Married</option>
-                                        <option value="divorced">Divorced</option>
-                                        <option value="widowed">Widowed</option>
-                                    </select>
-                                    <label for="qualification">Highest Qualification(Specialization)</label>
-                                    <input type="text" class="form-control" id="qualification" name="qualification">
-                                    <label for="percentage">Percentage/CGPA</label>
-                                    <input type="text" class="form-control" id="percentage" name="percentage">
-                                    <label for="yop">Year of passing</label>
-                                    <input type="text" class="form-control" id="yop" name="yop">
-                                    
-                                </div>
-                            
-                            </div>
-
-                            <div class="col-md-6">
-                            
-                                <div class="form-group">
-                                    <label for="employee_email">Employee Email</label>
-                                    <input type="email" class="form-control" id="email_id" name="email_id">
-                                    <label for="doj">Date Of Joining</label>
-                                    <input type="date" class="form-control" id="doj" name="doj">
-
-                                    <label for="department">Department</label>
-                                    <select class="form-control" id="department" name="department">
-                                        <option value="">Please select Department</option>
-                                        {% for department in departments %}
-                                        <option value="{{department.element}}">{{department.element}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    
-                                    <label for="job_title">Job Title</label>
-                                    <select class="form-control" id="job_title" name="job_title">
-                                        <option value="">Please select Job Title</option>
-                                        {% for role in role %}
-                                        <option value="{{role.element}}">{{role.element}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <label for="employment_type">Employment Type</label>
-                                    <select class="form-control" id="employment_type" name="employment_type">
-                                        <option value="">Select</option>
-                                        <option value="part_time">Part Time</option>
-                                        <option value="full_time">Full Time</option>
-                                        <option value="internship">Internship</option>
-                                        <option value="contractual">Contractual</option>
-                                    </select>
-                                    <label for="employment_status">Employment status</label>
-                                    <select class="form-control" id="employment_status" name="employment_status">
-                                        <option value="active" selected>Active</option>
-                                        
-                                    </select>
-                                    <label for="salary">Salary</label>
-                                    <input type="text" class="form-control" id="salary" name="salary">
-                                    <label for="afi">Areas for improvement</label>
-                                    <input type="text" class="form-control" id="afi" name="afi">
-                                    <label for="achievements">Achievements</label>
-                                    <input type="text" class="form-control" id="achievements" name="achievements">
-                                    <label for="workshop">Workshop attended</label>
-                                    <input type="text" class="form-control" id="workshop" name="workshop">
-                                    <label for="certifications">Certifications</label>
-                                    <input type="text" class="form-control" id="certifications" name="certifications">
-                                    <label for="skills">Skills acquired</label>
-                                    <input type="text" class="form-control" id="skills" name="skills">
-                                </div>
-                            
-                            </div>
-                        </div> -->
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="dob">Date Of Birth</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control" id="dob" name="dob">
+                        </div>
+                    
+                        <div class="col-md-2 control-label">
+                            <label for="qualification">Highest Qualification(Specialization)</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="qualification" name="qualification">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="percentage">Percentage/CGPA</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="percentage" name="percentage">
+                        </div>
+                    
+                        <div class="col-md-2 control-label">
+                            <label for="yop">Year of passing</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="yop" name="yop">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="employee_email" class="required">Employee Email</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="email" class="form-control" id="email_id" name="email_id">
+                        </div>
+                    
+                        <div class="col-md-2 control-label">
+                            <label for="doj">Date Of Joining</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="date" class="form-control" id="doj" name="doj">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="department">Department</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="department" name="department">
+                                <option value="">Select</option>
+                                {% for department in department %}
+                                <option value="{{department.element}}">{{department.element}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    
+                        <div class="col-md-2 control-label">
+                            <label for="job_title">Job Title</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="job_title" name="job_title">
+                                <option value="">Please select Job Title</option>
+                                {% for role in role %}
+                                <option value="{{role.element}}">{{role.element}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="employment_type">Employment Type</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="employment_type" name="employment_type">
+                                <option value="">Select</option>
+                                <option value="part_time">Part Time</option>
+                                <option value="full_time">Full Time</option>
+                                <option value="internship">Internship</option>
+                                <option value="contractual">Contractual</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="employment_status">Employment status</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="employment_status" name="employment_status">
+                                <option value="active" selected>Active</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="salary">Salary</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="salary" name="salary">
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="afi">Areas for improvement</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="afi" name="afi">
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="achievements">Achievements</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="achievements" name="achievements">
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="workshop">Workshop attended</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="workshop" name="workshop">
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="certifications">Certifications</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="certifications" name="certifications">
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="skills">Skills acquired</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="skills" name="skills">
+                        </div>
+                        
+                    </div>        
                     
                 </div>
                 <div class="modal-footer">
@@ -285,7 +344,7 @@
 
 <script>
         // add bootstrap select2 
-        $('#marital_status, #city, #bloodgroup, #gender').select2({
+        $('#marital_status, #city, #bloodgroup, #gender, #department, #job_title').select2({
         width : '100%',
         theme : 'bootstrap'
     })
