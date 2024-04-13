@@ -27,6 +27,11 @@ def add_overallleave_managenent():
             "peternity_leave" : request_data['peternity_leave'],
         }
         
+        duplicate_response = check_duplicate_leave(data)
+        print(duplicate_response)
+        if duplicate_response['status']:
+            return redirect('/overallleave_management')
+        
         add_metadata_response = add_to_database(data, "tb_overallleave", connection)
         transaction.commit()
         connection.close()
