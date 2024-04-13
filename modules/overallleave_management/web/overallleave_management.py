@@ -20,14 +20,14 @@ def add_overallleave_managenent():
         # current_datetime = datetime.now()
 
         data = {
-            "employee_name" : request_data['employee_name'],
+            "employee_id" : request_data['employee_id'],
             "earn_leave" : request_data['earn_leave'],
             "casual_leave" : request_data['casual_leave'],
             "meternity_leave" : request_data['meternity_leave'],
             "peternity_leave" : request_data['peternity_leave'],
         }
         
-        duplicate_response = check_duplicate_leave(data)
+        duplicate_response = check_duplicate_overall_leave_master(data)
         print(duplicate_response)
         if duplicate_response['status']:
             return redirect('/overallleave_management')
@@ -50,8 +50,8 @@ def retrive_overallleave_management():
         "message" : ""
     }
     try:
-        print('Hello')
-        select_query = f"Select employee_name, earn_leave, casual_leave, sick_leave, meternity_leave, peternity_leave from tb_overallleave;"
+
+        select_query = f"Select tol.employee_id, concat(tei.first_name, ' ', if(tei.middle_name is null, '', concat(tei.middle_name, ' ')), tei.last_name) as employee_name, tol.earn_leave, tol.casual_leave, tol.sick_leave, tol.meternity_leave, tol.peternity_leave from tb_overallleave tol left join tb_employee_info tei on(tei.employee_id = tol.employee_id) order by tol.id desc;"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount:
             columns = result.keys()

@@ -50,7 +50,7 @@ def retrive_leave_applications():
         "message" : ""
     }
     try:
-        select_query = f"Select tla.employee_id, concat(tei.first_name, ' ', if(tei.middle_name is null, '', concat(tei.middle_name, ' ')), tei.last_name) as employee_name, tla.leave_type, date_format(tla.from_date, '%d-%m-%Y') as from_date, date_format(tla.to_date, '%d-%m-%Y') as to_date, status, tla.applied_by, date_format(tla.applied_on, '%d-%m-%Y %H:%i:%s') as applied_on from tb_leave_applications tla left join tb_employee_info tei on(tla.employee_id=tei.employee_id)"
+        select_query = f"Select tla.employee_id, concat(tei.first_name, ' ', if(tei.middle_name is null, '', concat(tei.middle_name, ' ')), tei.last_name) as employee_name, tla.leave_type, date_format(tla.from_date, '%d-%m-%Y') as from_date, date_format(tla.to_date, '%d-%m-%Y') as to_date, status, tla.applied_by, date_format(tla.applied_on, '%d-%m-%Y %H:%i:%s') as applied_on from tb_leave_applications tla left join tb_employee_info tei on(tla.employee_id=tei.employee_id)  order by tla.id desc"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount:
             columns = result.keys()

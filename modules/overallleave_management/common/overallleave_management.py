@@ -1,13 +1,13 @@
 
 # common get overallleave
-def check_duplicate_leave(data):
+def check_duplicate_overall_leave_master(data):
     response = {
         "status" : False,
         "message" : ""
     }
     try:
         
-        select_query =f"Select * from tb_overallleave where employee_name = '{data['employee_name']}';"
+        select_query =f"Select * from tb_overallleave where employee_id = '{data['employee_id']}';"
         result = app._engine.connect().execute(text(select_query))
         
         if result.rowcount > 0:

@@ -98,7 +98,6 @@
                                     <label for="type">Employee Name</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="input-group">
                                         <select class="form-control" name="employee_id" id="employee_id"> 
                                             <option value="">Select Employee</option>
                                             {% for employee in employee_list %}
@@ -106,7 +105,6 @@
                                             {% endfor %}
                                             
                                         </select>
-                                    </div>
                                 </div>
                                 
                             </div>
@@ -118,9 +116,7 @@
                                     <label for="clock_in_time">Clock In</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="input-group">
                                         <input type="time" id="clock_in_time" name="clock_in_time" class="form-control">
-                                    </div>
                                 </div>
                                 
                             </div>
@@ -131,9 +127,7 @@
                                 <label for="attendance_date"> Attendance Date</label>
                             </div>
                             <div class="col-md-8">
-                                <div class="input-group">
-                                    <input type="text" class="attendance_date datepicker" id="attendance_date" name="attendance_date">
-                                </div>
+                                    <input type="text" class="attendance_date datepicker" id="attendance_date" name="attendance_date" style="width: 100%;">
                             </div>  
                         </div>
                     </div>

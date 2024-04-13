@@ -22,7 +22,7 @@ def add_attendance():
         data = {
             "employee_id" : request_data['employee_id'],
             "clock_in" : datetime.strptime(request_data['clock_in_time'], '%H:%M').strftime('%H:%M:%S'),
-            "attendance_date" : datetime.strptime(request_data['attendance_date'], '%Y-%M-%d').strftime('%Y-%m-%d %H:%M:%S')
+            "attendance_date" : datetime.strptime(request_data['attendance_date'], '%Y-%M-%d').strftime('%Y-%m-%d')
         }
 
         duplicate_response = check_duplicate_attendance(data)

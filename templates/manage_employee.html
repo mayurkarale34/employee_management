@@ -88,7 +88,77 @@
                 </div>
                 <form action="/add_employee" method="POST">
                 <div class="modal-body">
-                        <div class="row">
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="fname" class="required">First Name</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input  class="form-control" type="text" id="fname" name="fname">
+                        </div>
+                    
+                        <div class="col-md-2 control-label">
+                            <label for="lname" class="required">Last Name</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" id="lname" name="lname">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="city" name="city">
+                                <option value="">Please select City</option>
+                                {% for city in cities %}
+                                <option value="{{city.element}}">{{city.element}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="marital_status">Marital Status</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="marital_status" name="marital_status">
+                                <option value="">Select</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2 control-label">
+                            <label for="gender">Gender</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="gender" name="gender">
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-2 control-label">
+                            <label for="bloodgroup">Blood Group</label>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" id="bloodgroup" name="bloodgroup">
+                                <option value="">Please select Blood Group</option>
+                                {% for bloodgroup in bloodgroup %}
+                                <option value="{{bloodgroup.element}}">{{bloodgroup.element}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                    </div>
+                        <!-- <div class="row">
                             <div class="col-md-6">
                             
                                 <div class="form-group">
@@ -195,7 +265,7 @@
                                 </div>
                             
                             </div>
-                        </div>
+                        </div> -->
                     
                 </div>
                 <div class="modal-footer">
@@ -211,7 +281,7 @@
 
 <script>
         // add bootstrap select2 
-        $('#marital_status, #city').select2({
+        $('#marital_status, #city, #bloodgroup, #gender').select2({
         width : '100%',
         theme : 'bootstrap'
     })

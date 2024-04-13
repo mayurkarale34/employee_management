@@ -5,11 +5,11 @@ def check_duplicate_attendance(data):
         "message" : ""
     }
     try:
-        select_query = f"Select * from tb_attendance where employee_id = '{data['employee_id']}' and attendance_date = '{data['attendance_date']}'"
+        select_query = f"Select * from tb_attendance where employee_id = '{data['employee_id']}' and date(attendance_date) = '{data['attendance_date']}'"
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount > 0:
             response['status'] = True
-            response['message'] = "Found duplicate record"
+            response['message'] = "Found duplicate Attendance"
             return response
         return response
     except Exception as e:

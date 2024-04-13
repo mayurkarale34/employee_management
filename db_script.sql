@@ -115,3 +115,6 @@ CREATE TABLE `tb_leave_applications` (
 
 ALTER TABLE `tb_attendance` 
 CHANGE COLUMN `employee_name` `employee_id` VARCHAR(45) NULL DEFAULT NULL ;
+
+ALTER TABLE `tb_overallleave` 
+CHANGE COLUMN `employee_name` `employee_id` VARCHAR(45) NULL DEFAULT NULL ;
