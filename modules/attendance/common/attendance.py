@@ -1,48 +1,16 @@
-          
-# common get attendance
-def retrive_attendance_by_employee_name(employee_name):
+
+def check_duplicate_attendance(data):
     response = {
         "status" : False,
-        "data" : [],
         "message" : ""
     }
     try:
-
-        select_query = text(f"Select clock_in_time, attendance_date, concat(first_name, ' ', if(middle_name is null, '', concat(last_name, ' ')), last_name) as employee_name from tb_attendance where employee_name = '{employee_name}';")
-
-        # Executing the query with the provided connection
-        result = app._engine.connect().execute(select_query)
-        
-        for row in result:
-            response['data'].append({
-                "employee_name" : row[0],
-                "clock_in_time" : row[1],
-                "attendance_date" :row[2]
-            })
-        response['status'] = True
-        response['message'] = "Data retrived successfully..."
-        return response
-    except Exception as e:
-        print(str(e))
-        response['message'] = "Error while getting attendance, Please contact to admin"
-        return response
-
-
-# Get all attendance
-def get_all_attendance():
-    response = {
-        "data" : [],
-        "message" : ""
-    }
-    try:
-        select_query = f"Select employee_name, clock_in, attendance_date from tb_attendance;"
+        select_query = f"Select * from tb_attendance where employee_id = '{data['employee_id']}' and attendance_date = '{data['attendance_date']}'"
         result = app._engine.connect().execute(text(select_query))
-        if result.rowcount:
-            columns = result.keys()
-            for row in result:
-                row_dict = dict(zip(columns, row))
-                response['data'].append(row_dict)
-            
+        if result.rowcount > 0:
+            response['status'] = True
+            response['message'] = "Found duplicate record"
+            return response
         return response
     except Exception as e:
         print(str(e))
