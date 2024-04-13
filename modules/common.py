@@ -51,4 +51,21 @@ def retrive_metadata_by_type(type):
         print(str(e))
         response['message'] = "Error while getting metadata, Please contact to admin"
         return response
+    
+def check_duplicate_metadata(data):
+    response = {
+        "status" : False,
+        "message" : ""
+    }
+    try:
+        select_query = f"Select * from tb_metadata where type = '{data['type']}' and date(element) = '{data['element']}'"
+        result = app._engine.connect().execute(text(select_query))
+        if result.rowcount > 0:
+            response['status'] = True
+            response['message'] = "Found duplicate record"
+            return response
+        return response
+    except Exception as e:
+        print(str(e))
+        return response
  

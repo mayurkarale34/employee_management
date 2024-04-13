@@ -43,7 +43,18 @@ def add_metadata():
     transaction = connection.begin()
     try:
         request_data = dict(request.form)
-        print(request_data)
+        data = {
+            "id" : request_data['id'],
+            "type" : request_data['type'],
+            "element" : request_data['element']
+        }
+        
+        
+        duplicate_response = check_duplicate_metadata(data)
+        print(duplicate_response)
+        if duplicate_response['status']:
+            return redirect('/metadata')
+        
         add_metadata_response = add_to_database(request_data, "tb_metadata", connection)
         transaction.commit()
         connection.close()
