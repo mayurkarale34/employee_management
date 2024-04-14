@@ -169,8 +169,28 @@
     </div>
     
 </nav>
+<div class="container-fluid">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}" role="alert">
+                    <p style="font-size: medium;"><b>{{category|title}} : </b> {{message}}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                alert.style.display = 'none';
+            });
+        }, 5000);
+    });
+
     $('#manage_metadata').click(function(){
        window.location.href = '/manage_metadata';
    });

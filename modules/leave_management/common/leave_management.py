@@ -9,7 +9,7 @@ def check_duplicate_leave(data):
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount > 0:
             response['status'] = True
-            response['message'] = "Found duplicate record"
+            response['message'] = "Leave already applied"
             return response
         return response
     except Exception as e:

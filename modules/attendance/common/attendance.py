@@ -9,7 +9,7 @@ def check_duplicate_attendance(data):
         result = app._engine.connect().execute(text(select_query))
         if result.rowcount > 0:
             response['status'] = True
-            response['message'] = "Found duplicate Attendance"
+            response['message'] = "Attendance already marked ..."
             return response
         return response
     except Exception as e:

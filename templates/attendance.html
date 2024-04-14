@@ -131,6 +131,7 @@
                             </div>  
                         </div>
                     </div>
+                    <input type="text" id="employee_name" name="employee_name" class="form-control hidden">
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -154,5 +155,9 @@
       autoclose: true, // Close the datepicker when selecting a date
       todayHighlight: true // Highlight today's date
     });
+
+    $('#employee_id').change(function(e){
+        $('#employee_name').val($('#employee_id option:selected').text());
+    })
 </script>
 </html>

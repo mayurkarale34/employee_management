@@ -118,3 +118,9 @@ CHANGE COLUMN `employee_name` `employee_id` VARCHAR(45) NULL DEFAULT NULL ;
 
 ALTER TABLE `tb_overallleave` 
 CHANGE COLUMN `employee_name` `employee_id` VARCHAR(45) NULL DEFAULT NULL ;
+
+ALTER TABLE `tb_employee_info` 
+ADD COLUMN `login_enabled` VARCHAR(1) NULL DEFAULT 'Y' AFTER `skills_acquired`;
+
+ALTER TABLE `tb_employee_info` 
+ADD COLUMN `password` VARCHAR(45) NULL DEFAULT 'test' AFTER `login_enabled`;
