@@ -18,7 +18,7 @@ def add_attendance():
         request_data = dict(request.form)
         # Getting the current date and time
         # current_datetime = datetime.now()
-
+        employee_name = request_data['employee_name'],
         data = {
             "employee_id" : request_data['employee_id'],
             "clock_in" : datetime.strptime(request_data['clock_in_time'], '%H:%M').strftime('%H:%M:%S'),
@@ -26,18 +26,21 @@ def add_attendance():
         }
 
         duplicate_response = check_duplicate_attendance(data)
-        print(duplicate_response)
         if duplicate_response['status']:
+            flash(duplicate_response['message'], 'warning')
             return redirect('/attendance')
         
         add_attendance_response = add_to_database(data, "tb_attendance", connection)
         transaction.commit()
         connection.close()
+        message = f"Attendance of '{employee_name}' has been Marked successfully"
+        flash(message, "success")
         return redirect('/attendance')
     except Exception as e:
         transaction.rollback()
         connection.close()
         print(str(e))
+        flash("Error while marking attendance -> " + str(e), "danger")
         return redirect('/attendance')
     
       

@@ -28,18 +28,19 @@ def apply_for_leave():
         }
 
         duplicate_response = check_duplicate_leave(data)
-        print(duplicate_response)
         if duplicate_response['status']:
+            flash(duplicate_response['message'], 'warning')
             return redirect('/leave_management')
         
         apply_leave_response = add_to_database(data, "tb_leave_applications", connection)
         transaction.commit()
         connection.close()
+        flash("Leave Applied Successfully", 'success')
         return redirect('/leave_management')
     except Exception as e:
         transaction.rollback()
         connection.close()
-        print(str(e))
+        flash("Error while applying leave -> "+str(e), 'danger')
         return redirect('/leave_management')
 
 @app.route('/retrive_leave_applications', methods=['GET'])

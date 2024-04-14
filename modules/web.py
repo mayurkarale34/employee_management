@@ -20,9 +20,26 @@ def validate_login():
     data = dict(request.form)
     user_name = data['username']
     password = data['password']
-    if user_name.upper() == 'ADMIN' and password.upper()=='ADMIN':
+    employee_name = user_name.title()
+    if user_name.upper() != 'ADMIN':
+        select_query = f"Select concat(first_name, ' ', if(middle_name is null, '', concat(middle_name, ' ')), last_name) as employee_name from tb_employee_info where '{user_name}' in (employee_id, mobile_number) and password = '{password}' and login_enabled = 'Y';"
+        result = app._engine.connect().execute(text(select_query))
+
+        if result.rowcount:
+            columns = result.keys()
+            for row in result:
+                row_dict = dict(zip(columns, row))
+                employee_name = row_dict['employee_name']
+            
+            session['greatings'] = set_greetings()
+            session['logged_user_name'] = employee_name
+            return jsonify({"status" : True})
+        else:
+            return jsonify({"status" : False})
+               
+    elif user_name.upper() == 'ADMIN' and password.upper()=='ADMIN':
         session['greatings'] = set_greetings()
-        session['logged_user_name'] = 'Admin'
+        session['logged_user_name'] = employee_name
         return jsonify({"status" : True})
     else:
         return jsonify({"status" : False})
