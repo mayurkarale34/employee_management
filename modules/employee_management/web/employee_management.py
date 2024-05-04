@@ -50,14 +50,25 @@ def add_employee():
             
         }
         
-        add_employee_response = add_to_database(data, "tb_employee_info", connection)
+        duplicate_response = check_duplicate_record(data)
+        if duplicate_response['status']:
+            flash(duplicate_response['message'], 'warning')
+            transaction.rollback()
+            connection.close()
+            return redirect('/employee_management')
+        
+        add_attendance_response = add_to_database(data, "tb_employee_info", connection)
         transaction.commit()
         connection.close()
+        message = f"Record of '{data['first_name']} {data['last_name']}' has been added successfully"
+        flash(message, "success")
         return redirect('/employee_management')
+        
     except Exception as e:
         transaction.rollback()
         connection.close()
         print(str(e))
+        flash("Error while adding record -> " + str(e), "danger")
         return redirect('/employee_management')
     
 

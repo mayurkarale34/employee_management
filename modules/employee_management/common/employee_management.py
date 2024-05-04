@@ -35,3 +35,20 @@ def get_all_employees():
     except Exception as e:
         print(str(e))
         return response
+    
+def check_duplicate_record(data):
+    response = {
+        "status" : False,
+        "message" : ""
+    }
+    try:
+        select_query = f"Select * from tb_employee_info where mobile_number = '{data['mobile_number']}'"
+        result = app._engine.connect().execute(text(select_query))
+        if result.rowcount > 0:
+            response['status'] = True
+            response['message'] = "Record already added ..."
+            return response
+        return response
+    except Exception as e:
+        print(str(e))
+        return response
