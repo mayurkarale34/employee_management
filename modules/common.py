@@ -1,25 +1,16 @@
 
-# common add to database
-def add_to_database(data, table, connection):
+def check_duplicate_metadata(data):
     response = {
         "status" : False,
         "message" : ""
     }
     try:
-        # Constructing the INSERT query dynamically
-        columns = ', '.join(data.keys())
-        values = ""
-        for val in data.values():
-            if len(values):
-                values = values + ', '+ "'" + val + "'"
-            else:
-                values = "'" + val + "'"
-        insert_query = text(f"INSERT INTO {table} ({columns}) VALUES ({values});")
-
-        # Executing the query with the provided connection
-        connection.execute(insert_query)
-        
-        response['status'] = True
+        select_query = f"Select * from tb_metadata where element = '{data['element']}' and date(type) = '{data['type']}'"
+        result = app._engine.connect().execute(text(select_query))
+        if result.rowcount > 0:
+            response['status'] = True
+            response['message'] = "Found duplicate"
+            return response
         return response
     except Exception as e:
         print(str(e))
@@ -50,22 +41,5 @@ def retrive_metadata_by_type(type):
     except Exception as e:
         print(str(e))
         response['message'] = "Error while getting metadata, Please contact to admin"
-        return response
-    
-def check_duplicate_metadata(data):
-    response = {
-        "status" : False,
-        "message" : ""
-    }
-    try:
-        select_query = f"Select * from tb_metadata where type = '{data['type']}' and date(element) = '{data['element']}'"
-        result = app._engine.connect().execute(text(select_query))
-        if result.rowcount > 0:
-            response['status'] = True
-            response['message'] = "Found duplicate record"
-            return response
-        return response
-    except Exception as e:
-        print(str(e))
         return response
  
